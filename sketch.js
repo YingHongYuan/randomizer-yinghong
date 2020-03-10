@@ -17,6 +17,7 @@ let flowers = [{
 }];
 
 let randomIndex;
+let couter = 0;
 
 function setup() {
   createCanvas(600, 600);
@@ -24,11 +25,19 @@ function setup() {
   textSize(32);
 
   text("click to randomize",250,500);
+  setTimeout(changeBackground,1000);
 }
 
 function draw() {
 
 }
+
+function changeBackground(){
+  background(random(255), random(255), random(255));
+  setTimeout(changeBackground,1000);
+}
+
+
 
 function mousePressed(){
 
