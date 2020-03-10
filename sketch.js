@@ -24,22 +24,13 @@ function setup() {
   textSize(32);
 
   text("click to randomize",250,500);
-  setTimeout(changeBackground,1000);
 }
 
 function draw() {
 
 }
 
-function changeBackground(){
-  background(random(255), random(255), random(255));
-  setTimeout(changeBackground,1000);
-}
-
-
-
-function mousePressed(){
-
+function randomizer(){
   if(flowers[0]){
   background(random(200,255));
   randomIndex = int(random(flowers.length));
@@ -50,4 +41,9 @@ else {
   background(random(200,255));
   text("nothing left!",250,500);
 }
+}
+
+function mousePressed(){
+setTimeout(randomizer,1000);
+
 }
