@@ -17,7 +17,6 @@ let flowers = [{
 }];
 
 let randomIndex;
-let couter = 0;
 
 function setup() {
   createCanvas(600, 600);
