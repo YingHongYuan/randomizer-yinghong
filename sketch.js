@@ -3,6 +3,8 @@ let randomIndex;
 let animating = false;
 let BeiJingHuanYingNis = [];
 let imageCounter = 0;
+let nameInputs = [];
+let addMoreButton;
 
 function preload() {
   for (let i = 0; i <= 4; i++) {
@@ -15,9 +17,15 @@ function setup() {
   background(100);
   textSize(32);
   frameRate(8);
-  text("click to randomize", 0, 500);
+  text("click to randomize", 250, 500);
   // console.log(BeiJingHuanYingNis);
+  for (let i = 1; i < 2; i++) {
+  nameInputs.push(createInput());
+  nameInputs[nameInputs.length - 1].parent("#inputFields");
 }
+
+}
+
 
 function draw() {
   if (animating == true) {
@@ -29,6 +37,13 @@ function draw() {
     } else {
       imageCounter = 0;
     }
+  }
+}
+
+function addAnotherInput() {
+  for (let i = 1; i < 2; i++) {
+    nameInputs.push(createInput());
+    nameInputs[nameInputs.length - 1].parent("#inputFields");
   }
 }
 
