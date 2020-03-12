@@ -38,11 +38,12 @@ function setup() {
 function draw() {
 if (animating == true){
   clear();
-  image(BeiJingHuanYingNis[imageCounter],width/2,height/2);
-if (imageCounter < BeiJingHuanYingNis.length){
-  imageCounter ++;
-} else{
-  imageCounter = 0;
+  image(BeiJingHuanYingNis[imageCounters],0,0);
+if (imageCounter < BeiJingHuanYingNis.lengh){
+  imageCounter++;
+}
+else {
+  imageCounter=0;
 }
 }
 }
