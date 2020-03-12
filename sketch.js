@@ -36,12 +36,9 @@ function draw() {
 function randomizer() {
   animating = false;
 
-  if (fuwa[0]) {
+  if (BeiJingHuanYingNis[0]) {
     clear();
-    randomIndex = int(random(fuwa.length));
     image(random(BeiJingHuanYingNis), 0, 0);
-    text(fuwa[randomIndex].name, 500, 100);
-    fuwa.splice(randomIndex, 1);
   } else {
     background(random(200, 255));
     text("nothing left!", 500, 100);
