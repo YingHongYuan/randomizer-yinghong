@@ -1,19 +1,19 @@
 // the flower I like
-let flowers = [{
-  name:"sunflower",
-  color: "yellow"
+let fuwa = [{
+  name:"BeiBei",
+  color: "blue"
 },{
-  name:"rose",
-  color: "red"
+  name:"JingJing",
+  color: "black"
 },{
-  name:"lily",
-  color: "white"
+  name:"HuanHuan",
+  color: "Red"
 },{
-  name:"tulip",
+  name:"YingYing",
   color: "orange"
 },{
-  name:"babysbreath",
-  color: "purple"
+  name:"NiNi",
+  color: "Green"
 }];
 
 let randomIndex;
@@ -30,12 +30,15 @@ function draw() {
 
 }
 
+
 function randomizer(){
-  if(flowers[0]){
+
+
+  if(fuwa[0]){
   background(random(200,255));
-  randomIndex = int(random(flowers.length));
-  text(flowers[randomIndex].name,250,500);
-  flowers.splice(randomIndex,1);
+  randomIndex = int(random(fuwa.length));
+  text(fuwa[randomIndex].name,250,500);
+  fuwa.splice(randomIndex,1);
 }
 else {
   background(random(200,255));
@@ -44,6 +47,6 @@ else {
 }
 
 function mousePressed(){
+  animating = true;
 setTimeout(randomizer,1000);
-
 }
