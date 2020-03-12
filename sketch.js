@@ -17,6 +17,14 @@ let fuwa = [{
 }];
 
 let randomIndex;
+let animating = false;
+let BeiJingHuanYingNi = [];
+
+function preload(){
+  for(let i = 0; i <= 15; i++)
+  {BeiJingHuanYingNi[i]=loadImage(`BeiJingHuanYingNi_${i}.Jpg`)
+}
+}
 
 function setup() {
   createCanvas(600, 600);
