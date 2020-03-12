@@ -21,8 +21,8 @@ let animating = false;
 let BeiJingHuanYingNis = [];
 
 function preload(){
-  for(let i = 0; i <= 15; i++)
-  {BeiJingHuanYingNis[i]=loadImage(`BeiJingHuanYingNi_${i}.Jpg`)
+  for(let i = 0; i <= 4; i++)
+  {BeiJingHuanYingNis[i]=loadImage(`BeiJingHuanYingNi_${i}.Png`)
 }
 }
 
