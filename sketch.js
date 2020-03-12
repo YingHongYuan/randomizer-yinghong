@@ -18,11 +18,11 @@ let fuwa = [{
 
 let randomIndex;
 let animating = false;
-let BeiJingHuanYingNi = [];
+let BeiJingHuanYingNis = [];
 
 function preload(){
   for(let i = 0; i <= 15; i++)
-  {BeiJingHuanYingNi[i]=loadImage(`BeiJingHuanYingNi_${i}.Jpg`)
+  {BeiJingHuanYingNis[i]=loadImage(`BeiJingHuanYingNi_${i}.Jpg`)
 }
 }
 
@@ -32,15 +32,18 @@ function setup() {
   textSize(32);
 
   text("click to randomize",250,500);
+  console.log(BeiJingHuanYingNis);
 }
 
 function draw() {
-
+if (animating == true){
+  image(BeiJingHuanYingNis[0],width/2,height/2);
+}
 }
 
 
 function randomizer(){
-
+  animating = false;
 
   if(fuwa[0]){
   background(random(200,255));
