@@ -1,70 +1,54 @@
-// the flower I like
-let fuwa = [{
-  name:"BeiBei",
-  color: "blue"
-},{
-  name:"JingJing",
-  color: "black"
-},{
-  name:"HuanHuan",
-  color: "Red"
-},{
-  name:"YingYing",
-  color: "orange"
-},{
-  name:"NiNi",
-  color: "Green"
-}];
 
 let randomIndex;
 let animating = false;
 let BeiJingHuanYingNis = [];
+let imageCounter = 0;
 
-function preload(){
-  for(let i = 0; i <= 4; i++)
-  {BeiJingHuanYingNis[i]=loadImage(`BeiJingHuanYingNi_${i}.Png`)
-}
+function preload() {
+  for (let i = 0; i <= 4; i++) {
+    BeiJingHuanYingNis[i] = loadImage(`BeiJingHuanYingNi_${i}.png`)
+  }
 }
 
 function setup() {
-  createCanvas(600, 600);
+  createCanvas(800, 800);
   background(100);
   textSize(32);
-
-  text("click to randomize",250,500);
-  console.log(BeiJingHuanYingNis);
+  frameRate(8);
+  text("click to randomize", 0, 500);
+  // console.log(BeiJingHuanYingNis);
 }
 
 function draw() {
-if (animating == true){
-  clear();
-  image(BeiJingHuanYingNis[imageCounters],0,0);
-if (imageCounter < BeiJingHuanYingNis.lengh){
-  imageCounter++;
-}
-else {
-  imageCounter=0;
-}
-}
+  if (animating == true) {
+    clear();
+    image(BeiJingHuanYingNis[imageCounter], 0, 0);
+
+    if (imageCounter < BeiJingHuanYingNis.length - 1) {
+      imageCounter++;
+    } else {
+      imageCounter = 0;
+    }
+  }
 }
 
 
-function randomizer(){
+function randomizer() {
   animating = false;
 
-  if(fuwa[0]){
-  background(random(200,255));
-  randomIndex = int(random(fuwa.length));
-  text(fuwa[randomIndex].name,250,500);
-  fuwa.splice(randomIndex,1);
-}
-else {
-  background(random(200,255));
-  text("nothing left!",250,500);
-}
+  if (fuwa[0]) {
+    clear();
+    randomIndex = int(random(fuwa.length));
+    image(random(BeiJingHuanYingNis), 0, 0);
+    text(fuwa[randomIndex].name, 500, 100);
+    fuwa.splice(randomIndex, 1);
+  } else {
+    background(random(200, 255));
+    text("nothing left!", 500, 100);
+  }
 }
 
-function mousePressed(){
+function mousePressed() {
   animating = true;
-setTimeout(randomizer,1000);
+  setTimeout(randomizer, 1000);
 }
