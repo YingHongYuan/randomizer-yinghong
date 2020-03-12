@@ -37,7 +37,13 @@ function setup() {
 
 function draw() {
 if (animating == true){
-  image(BeiJingHuanYingNis[0],width/2,height/2);
+  clear();
+  image(BeiJingHuanYingNis[imageCounter],width/2,height/2);
+if (imageCounter < BeiJingHuanYingNis.length){
+  imageCounter ++;
+} else{
+  imageCounter = 0;
+}
 }
 }
 
